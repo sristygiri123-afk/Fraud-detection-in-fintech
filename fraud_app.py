@@ -37,7 +37,11 @@ load_css()
 # ==============================
 # LOAD DATA
 # ==============================
-df = pd.read_csv("creditcard.csv")
+@st.cache_data
+def load_data():
+    url = "https://raw.githubusercontent.com/sristygiri123-afk/Fraud-detection-in-fintech/main/creditcard.csv"
+    return pd.read_csv(url)
+df = load_data()
 X = df.drop("Class", axis=1)
 
 # ==============================
@@ -78,7 +82,7 @@ with st.expander("ℹ️ About this Model"):
 # ==============================
 # TIME
 # ==============================
-now = datetime.datetime.now()
+now = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=5, minutes=30)))
 seconds_since_midnight = now.hour * 3600 + now.minute * 60 + now.second
 
 # ==============================
