@@ -44,9 +44,9 @@ def load_data():
     return pd.read_csv(url, nrows=10000)
 
 df = load_data()
-st.write(df.shape)
-st.write(df.columns.tolist())
-st.stop()
+#st.write(df.shape)
+#st.write(df.columns.tolist())
+#st.stop()
 X = df.drop("Class", axis=1)
 
 # ==============================
