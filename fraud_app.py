@@ -40,7 +40,7 @@ load_css()
 @st.cache_data
 def load_data():
     file_id = "12yY4BxGbe4ysO61I3YsGDMhklb8GazGO"
-    url = f"https://drive.google.com/uc?export=download&id={file_id}"
+    url = f"https://drive.usercontent.google.com/download?id={file_id}&export=download&confirm=t"
     return pd.read_csv(url, nrows=10000)
 
 df = load_data()
