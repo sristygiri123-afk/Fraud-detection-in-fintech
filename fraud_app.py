@@ -42,6 +42,9 @@ def load_data():
     url = "https://raw.githubusercontent.com/sristygiri123-afk/Fraud-detection-in-fintech/main/creditcard.csv"
     return pd.read_csv(url, nrows=10000)
 df = load_data()
+st.write(df.shape)
+st.write(df.columns.tolist())
+st.stop()
 X = df.drop("Class", axis=1)
 
 # ==============================
