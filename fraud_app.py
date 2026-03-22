@@ -40,7 +40,7 @@ load_css()
 @st.cache_data
 def load_data():
     url = "https://raw.githubusercontent.com/sristygiri123-afk/Fraud-detection-in-fintech/main/creditcard.csv"
-    return pd.read_csv(url)
+    return pd.read_csv(url, nrows=10000)
 df = load_data()
 X = df.drop("Class", axis=1)
 
