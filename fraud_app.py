@@ -39,8 +39,10 @@ load_css()
 # ==============================
 @st.cache_data
 def load_data():
-    url = "https://raw.githubusercontent.com/sristygiri123-afk/Fraud-detection-in-fintech/main/creditcard.csv"
+    file_id = "12yY4BxGbe4ysO61I3YsGDMhklb8GazGO"
+    url = f"https://drive.google.com/uc?export=download&id={file_id}"
     return pd.read_csv(url, nrows=10000)
+
 df = load_data()
 st.write(df.shape)
 st.write(df.columns.tolist())
